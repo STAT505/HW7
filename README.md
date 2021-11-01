@@ -1,11 +1,37 @@
 # HW7
 
-### 1. (4 points) based on ROS 7.3
-Simulate 100 data points from the model, y = b_0 + b_1 x + b_2 x^2 + error, with the values of x being sampled at random from a uniform distribution on [0,50], errors that are normally distributed with mean 0 and standard deviation 3, and b_0, b_1, b_2 chosen so that the data shows a clear nonlinear curve.
+### 1.  
+Using the candy dataset ([https://www.kaggle.com/fivethirtyeight/the-ultimate-halloween-candy-power-ranking/](https://www.kaggle.com/fivethirtyeight/the-ultimate-halloween-candy-power-ranking/) below
+```
+ candy <- read_csv("https://math.montana.edu/ahoegh/teaching/stat446/candy-data.csv") 
+```
+fit a linear regression model to predict win percent. Specifically for this model explore a model with 
 
-  a. Fit a regression line to these data and display the output.
-  
-  b. Graph a scatterplot of the data and the regression line. This is the best-fit linear regression line, what does "best-fit" mean in this context?
+- `chocolate`
+- `peanutalmondy`
+- `pricepercent`
 
-### 2. (4 points) based on ROS 9.2
-Using your dataset for project 2, fit a linear regression model. Use the output from this model to simulate a predictive distribution for observations with a particular combination of levels of all predictors in the regression models. Create a figure to summarize the results.
+#### a. (3 points) EDA
+
+Create a few figures to explore the relationship between the three identified variables and `winpercent`. These figures should contain informative captions, titles, and labels.
+
+#### b. (3 points) Model Formulation
+
+Propose and write out a statistical model using complete notation. Note you may revise this after the following questions.
+
+#### c. (3 points) Model Fitting
+
+Fit a model using these three predictors. Focus on the functional form of the model: is an additive appropriate or do interactions need to be considered.
+
+#### d. (3 points) Model Interpretation
+
+Give (interval) estimates of all model parameters and describe them in the way a [candy maker](https://en.wikipedia.org/wiki/Willy_Wonka) can understand.
+
+#### e. (3 points) Model Interpretation
+
+Using your model, make (interval) predictions for the winning percentage for _new_ candy bar with the following ingredients:
+
+- `chocolate` = 1, `peanutalmondy` = 1, - `pricepercent` = .5
+- `chocolate` = 0, `peanutalmondy` = 1, - `pricepercent` = .5
+- `chocolate` = 0, `peanutalmondy` = 1, - `pricepercent` = .9
+
